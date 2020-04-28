@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Tarea No 3 - Spring MVC Thymeleaf</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Page level plugin CSS-->
+  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin.css" rel="stylesheet">
+<style>
+	p.mb-0 > b{
+		min-width:275px;
+		display:inline-block;
+	}
+</style>
+</head>
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+    <a class="navbar-brand mr-1" href="index.html">N-Capas</a>
+
+    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+      <i class="fas fa-bars"></i>
+    </button>
+
+  </nav>
+
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <div th:replace="commons/sidebar :: sidebar" />
+
+    <div id="content-wrapper">
+
+      <div class="container-fluid">
+			<h3 class="mt-4">Información de registro de Alumno.</h3>
+			<div class="card mb-4">
+            	<div class="card-body" th:if="${correcto}">
+            		<h5 class="mt-4"><u>Información ingresada de alumno es incorrecta.</u></h5>
+            		<p class="mb-0"><b>Nombres:</b>&nbsp;<span th:text="${nombre}"></span></p>
+            		<p class="mb-0"><b>Apellidos:</b>&nbsp;<span th:text="${apellido}"></span></p>
+            		<p class="mb-0"><b>Fecha Nacimiento:</b>&nbsp; <span th:text="${fecha}"></span></p>
+            		<p class="mb-0"><b>Fecha Lugar:</b>&nbsp;<span th:text="${lugar}"></span></p>
+            		<p class="mb-0"><b>Institulo o Colegio de Procedencia:</b>&nbsp; <span th:text="${instituto}"></span></p>
+            		<p class="mb-0"><b>Teléfono Fijo:</b>&nbsp;<span th:text="${telefono}"></span></p>
+            		<p class="mb-0"><b>Teléfono Móvil:</b>&nbsp;<span th:text="${movil}"></span></p>
+            	</div>
+            	<div class="card-body" th:unless="${correcto}">
+            		<h5 class="mt-4">Alumno ingresado con éxito.</h5>
+	                <a class="btn btn-success btn-lg" th:href="@{/ingresar}">
+	                	<i class="fa fa-plus-circle"></i>
+	                	Ingresar Nuevo Alumno
+	                </a>
+            	</div>
+            </div>
+      </div>
+      <!-- /.container-fluid -->
+
+    </div>
+    <!-- /.content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Page level plugin JavaScript-->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src="vendor/datatables/jquery.dataTables.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin.min.js"></script>
+
+  <!-- Demo scripts for this page-->
+  <script src="js/demo/datatables-demo.js"></script>
+  <script src="js/demo/chart-area-demo.js"></script>
+
+</body>
+
+</html>
